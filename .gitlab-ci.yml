@@ -34,7 +34,7 @@ publish:
   image: node:8
   stage: release
   script:
-    - npm run build
+    - npm run build-lib
     - npx npm-publish-git-tag
   only:
   - tags
