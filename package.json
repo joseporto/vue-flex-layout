@@ -16,14 +16,17 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/joseporto/vue-flex-layout"
+    "url": "git+https://gitlab.com/joseporto/vue-flex-layout.git"
   },
   "bugs": {
     "url": "https://gitlab.com/joseporto/vue-flex-layout/issues"
   },
   "main": "dist/vue-flex-layout.common.js",
   "unpkg": "dist/vue-flex-layout.umd.min.js",
-  "author": "José Porto <joseporto@icloud.com>",
+  "author": {
+    "name": "José Porto",
+    "email": "joseporto@icloud.com"
+  },
   "scripts": {
     "build": "vue-cli-service build",
     "build-lib": "vue-cli-service build --target lib ./src/components/index.js",
@@ -81,5 +84,8 @@
       "pre-commit": "npm run test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://gitlab.com/joseporto/vue-flex-layout#readme",
+  "_id": "vue-flex-layout@1.0.0"
 }
