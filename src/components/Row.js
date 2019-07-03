@@ -1,13 +1,17 @@
 export default {
   name: 'Row',
   props: {
-    tagName: {
+    tag: {
       type: String,
       default: 'div'
     },
     resetStyle: {
       type: Boolean,
       default: false
+    },
+    transition: {
+      type: String,
+      default: null
     },
     align: {
       type: String,
@@ -51,34 +55,42 @@ export default {
     }
   },
   render (createElement) {
+
+    const attrs = {
+      attrs: this.$attrs,
+      on: this.$listeners,
+      style: Object.assign({
+        display: 'flex',
+        flexWrap: 'wrap',
+        margin: `0 -${this.gutter}px`,
+      },
+        this.align ? {
+          'align-items': `${this.align}`
+        } : {},
+        this.justify ? {
+          'justify-content': `${this.justify}`
+        } : {},
+        this.grow ? {
+          height: '100%'
+        } : {},
+        this.resetStyle ? {
+          padding: '0',
+          listStyle: 'none'
+        } : {},
+        this.debug ? {
+          border: `dotted 1px ${this.$options.config.colors.debugBorder}`,
+          background: this.$options.config.colors.debug,
+          'min-height': '100px'
+        } : {}
+      )
+    }
+
+    if (this.transition) {
+      attrs.name = this.transition
+      attrs.tag = this.tag
+    }
+
     return createElement(
-      this.tagName, {
-        attrs: this.$attrs,
-        on: this.$listeners,
-        style: Object.assign({
-          display: 'flex',
-          flexWrap: 'wrap',
-          margin: `0 -${this.gutter}px`,
-        },
-          this.align ? {
-            'align-items': `${this.align}`
-          } : {},
-          this.justify ? {
-            'justify-content': `${this.justify}`
-          } : {},
-          this.grow ? {
-            height: '100%'
-          } : {},
-          this.resetStyle ? {
-            padding: '0',
-            listStyle: 'none'
-          } : {},
-          this.debug ? {
-            border: `dotted 1px ${this.$options.config.debugBorderColor}`,
-            background: this.$options.config.debugColor,
-            'min-height': '100px'
-          } : {}
-        )
-      }, this.$slots.default)
+      this.transition ? 'transition-group' : this.tag, attrs, this.$slots.default)
   }
 }

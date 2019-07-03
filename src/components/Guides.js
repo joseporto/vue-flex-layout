@@ -2,7 +2,7 @@
 export default {
   name: 'Guides',
   props: {
-    tagName: {
+    tag: {
       type: String,
       default: 'div'
     },
@@ -32,8 +32,8 @@ export default {
         right: '0',
         top: '0',
         pointerEvents: 'none',
-        borderRight: '1px solid #f00',
-        borderLeft: '1px solid #f00'
+        borderRight: `1px solid ${this.$options.config.colors.guidesLimits}`,
+        borderLeft: `1px solid ${this.$options.config.colors.guidesLimits}`
       }
     },
     linesHelperStyle () {
@@ -58,8 +58,8 @@ export default {
         width: '100%',
         top: '0',
         left: '0',
-        borderLeft: '1px solid #0f0',
-        borderRight: '1px solid #0f0'
+        borderLeft: `1px solid ${this.$options.config.colors.guidesContainer}`,
+        borderRight: `1px solid ${this.$options.config.colors.guidesContainer}`
       }
     }
   },
@@ -70,7 +70,7 @@ export default {
         display: 'block',
         height: '100%',
         width: '1px',
-        border: '1px dashed rgba(0, 155, 255, 0.8)',
+        border: `1px dashed ${this.$options.config.colors.guidesMain}`,
         top: '0',
         left: `calc(${100 * index}% / ${this.columns})`
       }
@@ -80,7 +80,7 @@ export default {
         position: 'absolute',
         display: 'block',
         height: '100%',
-        background: 'rgba(255, 0, 255, 0.1)',
+        background: `${this.$options.config.colors.guidesMainBackground}`,
         top: '0',
         left: `calc(${100 * index}% / ${this.columns} - ${this.gutter / 2}px)`,
         width: `${this.gutter}px`
@@ -101,7 +101,7 @@ export default {
   },
   mounted () {
     document.addEventListener('keydown', e => {
-      if (e.key === 'g') {
+      if (e.key === this.$options.config.guidesToggleKey) {
         this.visibility = !this.visibility
       }
     });
@@ -145,7 +145,7 @@ export default {
     }
 
     return createElement(
-      this.tagName, {
+      this.tag, {
         style: this.layoutHelperStyle,
       }, [
         createElement(
