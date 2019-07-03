@@ -13,6 +13,15 @@ Vue.use(VueFlexLayout, {
     lg: 992,
     xl: 1200
   },
+  guidesToggleKey: 'g',
+  colors: {
+    debugBorder: 'rgba(0,100,0,.3)',
+    debug: 'rgba(0,100,0,.2)',
+    guidesLimits: 'rgba(255, 0, 0, 1)',
+    guidesContainer: 'rgba(0, 255, 0, 1)',
+    guidesMain: 'rgba(0, 155, 255, 0.8)',
+    guidesMainBackground: 'rgba(255, 0, 255, 0.1)'
+  }
 })
 
 Vue.config.productionTip = false

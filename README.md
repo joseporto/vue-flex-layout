@@ -2,18 +2,74 @@
 
 A VueJS flexbox partitionable layout
 
-## Breakpoints
+## Instalation
+
+```bash
+yarn add vue-flex-layout
+```
+
+or
+
+```bash
+npm install vue-flex-layout
+```
+
+## Setup
+
+> NOTE: Configuration is optional
+
+### Vue.js
+
+- Add the following to you application main.js file:
 
 ```js
+import VueFlexLayout from './components/index.js'
+
+Vue.use(VueFlexLayout, /* configuration */)
+```
+
+### NuxtJS
+
+- Similar as with Vue.js, but I recomend adding a `components.js` file to plugins, with the following content:
+   
+```js
+import Vue from 'vue'
+import VueFlexLayout from 'vue-flex-layout';
+Vue.use(VueFlexLayout, /* configuration */);
+```
+
+- Register the plugin in `nuxt.config.js`:
+
+```js
+plugins: [
+  '@/plugins/components',
+],
+```
+
+## Configuration
+
+```js
+{
   columns: 12,
   gutter: 16,
+  maxWidth: 1420,
   breakpoints: {
     xs: 320,
     sm: 576,
     md: 768,
     lg: 992,
     xl: 1200
+  },
+  guidesToggleKey: 'g',
+  colors: {
+    debugBorder: 'rgba(0,100,0,.3)',
+    debug: 'rgba(0,100,0,.2)',
+    guidesLimits: 'rgba(255, 0, 0, 1)',
+    guidesContainer: 'rgba(0, 255, 0, 1)',
+    guidesMain: 'rgba(0, 155, 255, 0.8)',
+    guidesMainBackground: 'rgba(255, 0, 255, 0.1)'
   }
+}
 ```
 
 these can be overriden by passing config options when you install `vue-flex-layout`
@@ -21,7 +77,7 @@ these can be overriden by passing config options when you install `vue-flex-layo
 ```js
 import VueFlexLayout from 'vue-flex-layout'
 
-Vue.use(VueFlexLayout, { /* configuration */ })
+Vue.use(VueFlexLayout, {/* configuration */})
 ```
 
 ## Gutter
@@ -33,6 +89,8 @@ Default `gutter` is `16`. Override by passing the `gutter` property on config op
 Default `columns` number is `12`. Override by passing the `columns` property on config options.
 
 ## Components
+
+> NOTE: Row, Column and Container components will inherit all attributes defined in the declaration.
 
 - [Container](#container-component)
 - [Row](#row-component)
@@ -56,7 +114,7 @@ Default `columns` number is `12`. Override by passing the `columns` property on 
 
 Property Name | Type | Description | Default
 --- | --- | --- | ---
-tagName | String | Set tag for the wrapper element that render our content | `div`
+tag | String | Set tag for the wrapper element that render our content | `div`
 xs | String | pixel width during `xs` breakpoint | -
 sm | String | pixel width during `sm` breakpoint | -
 md | String | pixel width during `md` breakpoint | -
@@ -77,15 +135,16 @@ xl | String | pixel width during `xl` breakpoint | -
 
 Property Name | Type | Description | Default
 --- | --- | --- | ---
-tagName | String | Set tag for the wrapper element that render our content | `div`
+tag | String | Set tag for the wrapper element that render our content | `div`
 resetStyle | Boolean | If true, add reset styles for `list` tags E.G. `ul` | `false`
+transition | Strint | Name for the transition group | `null`
 
 #### Transitions
 
 If you need to use a [transition-group](https://vuejs.org/v2/api/#transition-group) for your items, as far you can!
 
 ```js
-<Row tagName="transition-group" tag="ul" name="my-awesome-transition">
+<Row tag="transition-group" tag="ul" name="my-awesome-transition">
   ...
 </Row>
 ```
@@ -105,7 +164,7 @@ If you need to use a [transition-group](https://vuejs.org/v2/api/#transition-gro
 
 Property Name | Type | Description | Default
 --- | --- | --- | ---
-tagName | String | Set tag for the wrapper element that render our content | `div`
+tag | String | Set tag for the wrapper element that render our content | `div`
 noGutter | Boolean | If true, disable gutter | `false`
 xs | Number | column width during `xs` breakpoint | `12`
 sm | Number | column width during `sm` breakpoint | -
@@ -125,24 +184,24 @@ Hidden is an utility component that allows you to hide / show content based on y
 #### Simple example
 
 ```html
-<hidden from="md">
+<Hidden from="md">
   This content is hidden in `md` breakpoint and upper.
-</hidden>
+</Hidden>
 
-<hidden until="md">
+<Hidden until="md">
   This content is visible from `md` breakpoint and upper.
-</hidden>
+</Hidden>
 
-<hidden from="sm" to="md">
+<Hidden from="sm" to="md">
   This content is hidden from `sm` to `md` breakpoint.
-</hidden>
+</Hidden>
 ```
 
 #### Hidden options
 
 Property Name | Type | Description | Default
 --- | --- | --- | ---
-tagName | String | Set tag for the wrapper element that render our content | `div`
+tag | String | Set tag for the wrapper element that render our content | `div`
 from | String | the `breakpoint` name where the component starts to hide content | -
 until | String | the `breakpoint` name where the component starts to show content | -
 
@@ -156,6 +215,6 @@ You need to add the following to your template
 
 ```html
 <Guides :visible="false"/>
-````
+```
 
-Press `g` to make guides visible
+- Press `g` (default key) to make guides visible

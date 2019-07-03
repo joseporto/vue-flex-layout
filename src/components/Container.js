@@ -14,7 +14,7 @@ export default {
     }
   },
   props: {
-    tagName: {
+    tag: {
       type: String,
       default: 'div'
     },
@@ -41,7 +41,7 @@ export default {
   computed: {
     span () {
       if (!this.breakpoint)
-        return
+        return this.$options.config.maxWidth
       const { breakpoints } = this.$options.config
       return getBreakpointValue(this.breakpoint, breakpoints, this.reducedAttrs)
     },
@@ -63,7 +63,8 @@ export default {
   },
   render (createElement) {
     return createElement(
-      this.tagName, {
+      this.tag, {
+        attrs: this.$attrs,
         style: Object.assign({
           position: 'relative',
           marginLeft: 'auto',
@@ -74,8 +75,8 @@ export default {
           paddingRight: `${this.gutter}px`
         },
           this.debug ? {
-            border: `dotted 1px ${this.$options.config.debugBorderColor}`,
-            background: this.$options.config.debugColor
+            border: `dotted 1px ${this.$options.config.colors.debugBorder}`,
+            background: this.$options.config.colors.debug
           } : {}
         )
       }, this.$slots.default)

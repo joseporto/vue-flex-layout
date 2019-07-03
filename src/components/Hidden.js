@@ -4,11 +4,11 @@ export default {
   name: 'hidden',
   data () {
     return {
-      viewport: null // window.innerWidth || null
+      viewport: null
     }
   },
   props: {
-    tagName: {
+    tag: {
       type: String,
       default: 'div'
     },
@@ -49,7 +49,7 @@ export default {
   render (createElement) {
     if (this.isVisible) {
       return createElement(
-        this.tagName,
+        this.tag,
         this.$slots.default
       )
     } else {

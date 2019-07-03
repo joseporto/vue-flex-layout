@@ -14,7 +14,7 @@ export default {
     }
   },
   props: {
-    tagName: {
+    tag: {
       type: String,
       default: 'div'
     },
@@ -91,7 +91,8 @@ export default {
   },
   render (createElement) {
     return createElement(
-      this.tagName, {
+      this.tag, {
+        attrs: this.$attrs,
         style: Object.assign({
           position: 'relative',
           minHeight: '1px',
@@ -106,8 +107,8 @@ export default {
           'align-items': `${this.align}`
         } : {},
         this.debug ? {
-          border: `dotted 1px ${this.$options.config.debugBorderColor}`,
-          background: this.$options.config.debugColor
+          border: `dotted 1px ${this.$options.config.colors.debugBorder}`,
+          background: this.$options.config.colors.debug
         } : {})
       }, this.$slots.default)
   },
