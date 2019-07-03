@@ -1,24 +1,62 @@
 {
-  "name": "my-vue-library",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-flex-layout",
+  "version": "0.0.0",
+  "description": "A VueJS flexbox partitionable layout",
+  "keywords": [
+    "flex",
+    "flexbox",
+    "vuejs",
+    "nuxt",
+    "resize",
+    "resizable",
+    "fluid",
+    "responsive"
+  ],
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/joseporto/vue-flex-layout"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/joseporto/vue-flex-layout/issues"
+  },
+  "main": "dist/vue-flex-layout.common.js",
+  "unpkg": "dist/vue-flex-layout.umd.min.js",
+  "author": "José Porto <joseporto@icloud.com>",
   "scripts": {
-    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build-lib": "vue-cli-service build --target lib ./src/components/index.js",
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint",
+    "lint:scripts": "eslint --ext .js,.vue src/components",
+    "lint:fix": "eslint --ext .js,.vue --fix 'src/components/**'",
+    "commit": "npx git-cz"
   },
   "dependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.10"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "prettier": "^1.18.2",
+    "semantic-release-gitlab": "^8.0.1",
+    "semver": "^6.2.0",
     "vue-template-compiler": "^2.6.10"
+  },
+  "engines": {
+    "node": ">= 8",
+    "npm": ">= 6"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "eslintConfig": {
     "root": true,
@@ -34,13 +72,14 @@
       "parser": "babel-eslint"
     }
   },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
 }

@@ -1,18 +1,285 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Guides :visible="false" />
+    <Container>
+      <Row resetStyle tagName="ul" debug>
+        row should be empty
+        <Column tagName="li" :sm="12" :md="6">
+        </Column>
+        <Column :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+        <Column :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+        <Column :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+      </Row>
+    </Container>
+    <Container>
+      <Row resetStyle tagName="ul" >
+        <Column tagName="li" :sm="12" :md="8" debug>
+          <Button @click="debugButton('test')">
+            button
+          </Button>
+        </Column>
+        <Column :sm="12" :md="8" debug no-gutter>
+          <Button @click="debugButton('test')">
+            button
+          </Button>
+        </Column>
+        <Column :sm="12" :md="8" debug>
+          <Button @click="debugButton('test')">
+            button
+          </Button>
+        </Column>
+      </Row>
+    </Container>
+    <Container>
+      <Row debug>
+        <Column :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+        <Column :sm="12" :md="8" :mdShift="8" debug>
+          column has gap
+          <hidden from="md" until="lg">
+            <div class="dumb">
+              shown from md to lg
+            </div>
+          </hidden>
+        </Column>
+      </Row>
+    </Container>
+    <Container xl="1200">
+      <Row>
+        <column>
+          <div class="dumb" />
+        </Column>
+      </Row>
+    </Container>
+    <Container>
+      <Row resetStyle tagName="ul" debug>
+        row should be empty
+        <Column tagName="li" :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+        <Column :sm="12" :md="6">
+          <Button @click="debugButton('test')">
+            button
+          </Button>
+        </Column>
+        <Column :sm="12" :md="6">
+          <Button @click="debugButton('test')">
+            button
+          </Button>
+          <Button @click="debugButton('test')">
+            button
+          </Button>
+        </Column>
+        <Column :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+      </Row>
+    </Container>
+    <Container>
+      <Row resetStyle tagName="ul" >
+        <Column tagName="li" :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+        <Column :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+        <Column :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+      </Row>
+    </Container>
+    <Container>
+      <Row debug>
+        <Column :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+        <Column :sm="12" :md="8" :mdShift="8" debug>
+          column has gap
+          <hidden from="md" until="lg">
+            <div class="dumb">
+              shown from md to lg
+            </div>
+          </hidden>
+        </Column>
+      </Row>
+    </Container>
+    <Container xl="1200">
+      <Row>
+        <column>
+          <div class="dumb" />
+        </Column>
+      </Row>
+    </Container>
+    <Container>
+      <Row resetStyle tagName="ul" debug>
+        row should be empty
+        <Column tagName="li" :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+        <Column :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+        <Column :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+        <Column :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+      </Row>
+    </Container>
+    <Container>
+      <Row resetStyle tagName="ul" >
+        <Column tagName="li" :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+        <Column :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+        <Column :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+      </Row>
+    </Container>
+    <Container>
+      <Row debug>
+        <Column :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+        <Column :sm="12" :md="8" :mdShift="8" debug>
+          column has gap
+          <hidden from="md" until="lg">
+            <div class="dumb">
+              shown from md to lg
+            </div>
+          </hidden>
+        </Column>
+      </Row>
+    </Container>
+    <Container xl="1200">
+      <Row>
+        <column>
+          <div class="dumb" />
+        </Column>
+      </Row>
+    </Container>
+    <Container>
+      <Row resetStyle tagName="ul" debug>
+        row should be empty
+        <Column tagName="li" :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+        <Column :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+        <Column :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+        <Column :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+      </Row>
+    </Container>
+    <Container>
+      <Row resetStyle tagName="ul" >
+        <Column tagName="li" :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+        <Column :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+        <Column :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+      </Row>
+    </Container>
+    <Container>
+      <Row debug>
+        <Column :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+        <Column :sm="12" :md="8" :mdShift="8" debug>
+          column has gap
+          <hidden from="md" until="lg">
+            <div class="dumb">
+              shown from md to lg
+            </div>
+          </hidden>
+        </Column>
+      </Row>
+    </Container>
+    <Container xl="1200">
+      <Row>
+        <column>
+          <div class="dumb" />
+        </Column>
+      </Row>
+    </Container>
+    <Container>
+      <Row resetStyle tagName="ul" debug>
+        row should be empty
+        <Column tagName="li" :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+        <Column :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+        <Column :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+        <Column :sm="12" :md="6">
+          <!-- <div class="dumb" /> -->
+        </Column>
+      </Row>
+    </Container>
+    <Container>
+      <Row resetStyle tagName="ul" >
+        <Column tagName="li" :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+        <Column :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+        <Column :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+      </Row>
+    </Container>
+    <Container>
+      <Row debug>
+        <Column :sm="12" :md="8" debug>
+          <div class="dumb" />
+        </Column>
+        <Column :sm="12" :md="8" :mdShift="8" debug>
+          column has gap
+          <hidden from="md" until="lg">
+            <div class="dumb">
+              shown from md to lg
+            </div>
+          </hidden>
+        </Column>
+      </Row>
+    </Container>
+    <Container xl="1200">
+      <Row>
+        <column>
+          <div class="dumb" />
+        </Column>
+      </Row>
+    </Container>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+  name: 'app'
 }
 </script>
 
