@@ -28,6 +28,7 @@
     "email": "joseporto@icloud.com"
   },
   "scripts": {
+    "test": "echo \"Tests not yet specified\" && exit 0",
     "build": "vue-cli-service build",
     "build-lib": "vue-cli-service build --target lib ./src/components/index.js",
     "serve": "vue-cli-service serve",
