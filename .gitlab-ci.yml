@@ -1,4 +1,5 @@
 stages:
+  - test
   - release
 
 unit:
