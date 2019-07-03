@@ -1,4 +1,4 @@
-# Vue Flex VueFlexLayout
+# Vue Flex Layout
 
 A VueJS flexbox partitionable layout
 
