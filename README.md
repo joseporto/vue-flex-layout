@@ -165,7 +165,7 @@ If you need to use a [transition-group](https://vuejs.org/v2/api/#transition-gro
 Property Name | Type | Description | Default
 --- | --- | --- | ---
 tag | String | Set tag for the wrapper element that render our content | `div`
-noGutter | Boolean | If true, disable gutter | `false`
+nogutter | Boolean | If true, disable gutter | `false`
 xs | Number | column width during `xs` breakpoint | `12`
 sm | Number | column width during `sm` breakpoint | -
 md | Number | column width during `md` breakpoint | -

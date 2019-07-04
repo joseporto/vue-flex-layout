@@ -1,8 +1,8 @@
-import Container from './Container'
-import Row from './Row'
-import Column from './Column'
-import Hidden from './Hidden'
-import Guides from './Guides'
+import Container from './Layout/Container/Container'
+import Row from './Layout/Row/Row'
+import Column from './Layout/Column/Column'
+import Hidden from './Layout/Hidden/Hidden'
+import Guides from './Layout/Guides/Guides'
 import defaults from './helpers/defaults'
 
 const VueFlexLayout = {

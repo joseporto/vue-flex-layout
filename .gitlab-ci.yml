@@ -1,5 +1,6 @@
 stages:
   - test
+  - docs
   - release
 
 unit:
@@ -14,6 +15,18 @@ unit:
     - report
   only:
   - develop
+
+pages:
+  image: node:8
+  stage: docs
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+    - dist
+  only:
+  - master
 
 tag:
   before_script:
