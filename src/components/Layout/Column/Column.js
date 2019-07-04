@@ -1,9 +1,11 @@
 import {pick, debounce} from 'lodash'
+import completeCssProperty from '../../helpers/completeCssProperty'
+
 import {
   getDefaultColumnProps,
   getCurrentBreakpoint,
   getBreakpointValue
-} from './helpers'
+} from '../../helpers'
 
 export default {
   name: 'Column',
@@ -14,26 +16,38 @@ export default {
     }
   },
   props: {
+    /**
+     * The HTML tag to be used instead of the default `div`
+     */
     tag: {
       type: String,
       default: 'div'
     },
-    noGutter: {
+    /**
+     * Remove gutter
+     */
+    nogutter: {
       type: Boolean,
       default: false
     },
+    /**
+     * Vertical column alignment
+     */
     align: {
       type: String,
       validator(value) {
         return [
           'stretch',
-          'flex-start',
-          'flex-end',
+          'start',
+          'end',
           'center',
           'baseline'
         ].indexOf(value) !== -1
       }
     },
+    /**
+     * Set to apply some debug styling
+     */
     debug: {
       type: Boolean,
       default: false
@@ -53,7 +67,7 @@ export default {
   computed: {
     span () {
       if (!this.breakpoint)
-        return
+        return false
       const { breakpoints } = this.$options.config
       return getBreakpointValue(this.breakpoint, breakpoints, this.reducedAttrs)
     },
@@ -86,30 +100,39 @@ export default {
     },
     gutter () {
       const { gutter } = this.$options.config
-      return this.noGutter ? 0 : gutter
+      return this.nogutter ? 0 : gutter
     },
   },
   render (createElement) {
+    const style = {
+      display: 'flex',
+      position: 'relative',
+      minHeight: '1px',
+      width: '100%',
+      maxWidth: `${this.column}%`,
+      paddingLeft:  `${this.gutter/2}px`,
+      paddingRight: `${this.gutter/2}px`,
+      marginLeft: `${this.offset}%`,
+    }
+
+    if (this.span) {
+      style.flex = `0 0 ${this.column}%`
+    } else {
+      style.left = 'auto',
+      style.right = 'auto'
+    }
+    if (this.align) {
+      style.alignItems = `${completeCssProperty(this.align)}`
+    }
+    if (this.debug) {
+      style.border = `dotted 1px rgba(${this.$options.config.colors.debug[2]},0.5)`
+      style.background = `rgba(${this.$options.config.colors.debug[2]},0.3)`
+    }
+
     return createElement(
       this.tag, {
         attrs: this.$attrs,
-        style: Object.assign({
-          position: 'relative',
-          minHeight: '1px',
-          width: '100%',
-          flex: `0 0 ${this.column}%`,
-          maxWidth: `${this.column}%`,
-          paddingLeft:  `${this.gutter/2}px`,
-          paddingRight: `${this.gutter/2}px`,
-          marginLeft: `${this.offset}%`,
-        },
-        this.align ? {
-          'align-items': `${this.align}`
-        } : {},
-        this.debug ? {
-          border: `dotted 1px ${this.$options.config.colors.debugBorder}`,
-          background: this.$options.config.colors.debug
-        } : {})
+        style
       }, this.$slots.default)
   },
   mounted () {

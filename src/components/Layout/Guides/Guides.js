@@ -1,7 +1,9 @@
-
 export default {
   name: 'Guides',
   props: {
+    /**
+     * The HTML tag to be used instead of the default `div`
+     */
     tag: {
       type: String,
       default: 'div'
@@ -12,11 +14,15 @@ export default {
     }
   },
   data () {
+    const { colors, columns, gutter, maxWidth, guidesToggleKey } = this.$options.config
+
     return {
       visibility: this.visible,
-      columns: this.$options.config.columns,
-      gutter: this.$options.config.gutter,
-      maxWidth: this.$options.config.maxWidth
+      colors,
+      columns,
+      gutter,
+      maxWidth,
+      guidesToggleKey
     }
   },
   computed: {
@@ -32,8 +38,8 @@ export default {
         right: '0',
         top: '0',
         pointerEvents: 'none',
-        borderRight: `1px solid ${this.$options.config.colors.guidesLimits}`,
-        borderLeft: `1px solid ${this.$options.config.colors.guidesLimits}`
+        borderRight: `1px solid ${this.colors.guidesLimits}`,
+        borderLeft: `1px solid ${this.colors.guidesLimits}`
       }
     },
     linesHelperStyle () {
@@ -58,8 +64,8 @@ export default {
         width: '100%',
         top: '0',
         left: '0',
-        borderLeft: `1px solid ${this.$options.config.colors.guidesContainer}`,
-        borderRight: `1px solid ${this.$options.config.colors.guidesContainer}`
+        borderLeft: `1px solid ${this.colors.guidesContainer}`,
+        borderRight: `1px solid ${this.colors.guidesContainer}`
       }
     }
   },
@@ -70,7 +76,7 @@ export default {
         display: 'block',
         height: '100%',
         width: '1px',
-        border: `1px dashed ${this.$options.config.colors.guidesMain}`,
+        border: `1px dashed ${this.colors.guidesMain}`,
         top: '0',
         left: `calc(${100 * index}% / ${this.columns})`
       }
@@ -80,7 +86,7 @@ export default {
         position: 'absolute',
         display: 'block',
         height: '100%',
-        background: `${this.$options.config.colors.guidesMainBackground}`,
+        background: `${this.colors.guidesMainBackground}`,
         top: '0',
         left: `calc(${100 * index}% / ${this.columns} - ${this.gutter / 2}px)`,
         width: `${this.gutter}px`
@@ -101,7 +107,7 @@ export default {
   },
   mounted () {
     document.addEventListener('keydown', e => {
-      if (e.key === this.$options.config.guidesToggleKey) {
+      if (e.key === this.guidesToggleKey) {
         this.visibility = !this.visibility
       }
     });

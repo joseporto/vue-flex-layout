@@ -3,7 +3,7 @@ import {
   getDefaultContainerProps,
   getCurrentBreakpoint,
   getBreakpointValue
-} from './helpers'
+} from '../../helpers'
 
 export default {
   name: 'Container',
@@ -14,18 +14,34 @@ export default {
     }
   },
   props: {
+    /**
+     * The HTML tag to be used instead of the default `div`
+     */
     tag: {
       type: String,
       default: 'div'
     },
+    /**
+     * Set to apply some debug styling
+     */
     debug: {
       type: Boolean,
       default: false
     },
-    noGutter: {
+    /**
+     * Remove gutter
+     */
+    nogutter: {
       type: Boolean,
       default: false
-    }
+    },
+    /**
+     * Obey maxWidth
+     */
+    fluid: {
+      type: Boolean,
+      default: false
+    },
   },
   methods: {
     check () {
@@ -41,7 +57,7 @@ export default {
   computed: {
     span () {
       if (!this.breakpoint)
-        return this.$options.config.maxWidth
+        return this.maxWidth
       const { breakpoints } = this.$options.config
       return getBreakpointValue(this.breakpoint, breakpoints, this.reducedAttrs)
     },
@@ -58,27 +74,34 @@ export default {
     },
     gutter () {
       const { gutter } = this.$options.config
-      return this.noGutter ? 0 : gutter
+      return this.nogutter ? 0 : gutter
     }
   },
   render (createElement) {
+    const style = {
+      position: 'relative',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      paddingLeft:  `${this.gutter}px`,
+      paddingRight: `${this.gutter}px`,
+      width: '100%'
+    }
+
+    if (this.fluid) {
+      style.maxWidth = '100%'
+    } else {
+      style.maxWidth = `${this.$options.config.maxWidth}px`
+    }
+
+    if (this.debug) {
+      style.border = `dotted 1px rgba(${this.$options.config.colors.debug[0]},0.5)`
+      style.background = `rgba(${this.$options.config.colors.debug[0]},0.3)`
+    }
+
     return createElement(
       this.tag, {
         attrs: this.$attrs,
-        style: Object.assign({
-          position: 'relative',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          width: `${this.fluid ? '100%' : `${this.$options.config.maxWidth}px`}`,
-          maxWidth: `${this.span ? `${this.span}px` : '100%'}`,
-          paddingLeft:  `${this.gutter}px`,
-          paddingRight: `${this.gutter}px`
-        },
-          this.debug ? {
-            border: `dotted 1px ${this.$options.config.colors.debugBorder}`,
-            background: this.$options.config.colors.debug
-          } : {}
-        )
+        style
       }, this.$slots.default)
   },
   mounted () {

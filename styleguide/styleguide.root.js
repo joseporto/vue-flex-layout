@@ -1,4 +1,9 @@
-export default {
+import Vue from "vue";
+
+// in order not to polute the database and making useless database calls
+// we mock axios (we could have used mock-axios instead)
+Vue.prototype.$options = {
+config:() => Promise.resolve({
   columns: 12,
   gutter: 16,
   maxWidth: 1420,
@@ -22,4 +27,14 @@ export default {
     guidesMain: 'rgba(0, 155, 255, 0.8)',
     guidesMainBackground: 'rgba(255, 0, 255, 0.1)'
   }
-}
+})
+};
+
+export default previewComponent => {
+  // https://vuejs.org/v2/guide/render-function.html
+  return {
+    render(createElement) {
+      return createElement(previewComponent);
+    }
+  };
+};

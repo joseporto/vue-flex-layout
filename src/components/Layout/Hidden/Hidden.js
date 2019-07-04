@@ -1,7 +1,7 @@
 import {debounce} from 'lodash'
 
 export default {
-  name: 'hidden',
+  name: 'Hidden',
   data () {
     return {
       viewport: null
