@@ -46,8 +46,10 @@ pages:
   script:
     - npm install
     - npm run build
+    - rm -rf ./public
+    - mv dist public
   artifacts:
     paths:
-    - dist
+    - public
   only:
   - tags
