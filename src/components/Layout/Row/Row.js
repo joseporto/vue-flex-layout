@@ -98,8 +98,7 @@ export default {
         } : {},
         this.debug ? {
           border: `dotted 1px rgba(${this.$options.config.colors.debug[1]},0.5)`,
-          background: `rgba(${this.$options.config.colors.debug[1]},0.3)`,
-          'min-height': '100px'
+          background: `rgba(${this.$options.config.colors.debug[1]},0.3)`
         } : {}
       )
     }
