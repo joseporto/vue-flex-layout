@@ -2,8 +2,9 @@
 
 [![build status](https://img.shields.io/gitlab/pipeline/joseporto/vue-flex-layout/master.svg)](https://gitlab.com/joseporto/vue-flex-layout.git) [![npm-publish](https://img.shields.io/npm/dm/vue-flex-layout.svg)]([https://](https://www.npmjs.com/package/vue-flex-layout)) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![language count](https://img.shields.io/github/languages/count/joseporto/vue-flex-layout.svg)]()
 
-
 A VueJS flexbox partitionable layout
+
+> inspired by [React Grid System](https://github.com/JSxMachina/react-grid-system)
 
 ## Instalation
 

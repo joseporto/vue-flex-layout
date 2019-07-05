@@ -90,7 +90,7 @@ export default {
           'justify-content': `${completeCssProperty(this.justify)}`
         } : {},
         this.grow ? {
-          height: '100%'
+          'flex-grow': 1
         } : {},
         this.resetStyle ? {
           padding: '0',
