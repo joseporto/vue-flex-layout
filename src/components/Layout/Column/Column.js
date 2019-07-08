@@ -82,6 +82,20 @@ export default {
       default: null
     },
     /**
+     * Force column to be shown before other columns
+     */
+    first: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Force column to be shown after other columns
+     */
+    last: {
+      type: Boolean,
+      default: false
+    },
+    /**
      * Remove $layout-gutter
      */
     nogutter: {
@@ -117,6 +131,8 @@ export default {
         ...generateBreakpoints('md-shift', 12, this.mdshift),
         ...generateBreakpoints('lg-shift', 12, this.lgshift),
         ...generateBreakpoints('xl-shift', 12, this.xlshift),
+        'layout__column--first': this.first,
+        'layout__column--last': this.last,
         'layout__column--nogutter': this.nogutter,
         'layout__column--debug': this.debug
       }

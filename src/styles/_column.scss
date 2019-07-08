@@ -1,6 +1,5 @@
 .layout__column {
   box-sizing: border-box;
-  display: flex;
   flex-direction: row;
   flex: 1;
   padding-left: #{$layout-gutter/2}px;
@@ -22,6 +21,12 @@
   }
   &--align-baseline {
     align-items: baseline;
+  }
+  &--first {
+    order: -1;
+  }
+  &--last {
+    order: 1;
   }
 
   @mixin media-query($breakpoint) {
@@ -106,25 +111,19 @@
     box-sizing: border-box;
     min-height: 1rem;
     margin-bottom: 0;
-    background: #1bb3de;
-    border: 1px solid #FFF;
+    background: transparentize(#1BB3DE, .5);
+    border: 1px solid transparentize(#1BB3DE, .3);
     border-radius: 3px;
     overflow: hidden;
     text-align: center;
     color: white;
-    width: 100%;
-    height: 100%;
   }
   .box-row {
     margin-bottom: 1rem;
   }
-  .box-first {
-    background: #0066CC;
-    border-color: #007FFF;
-  }
-  .box-nested {
-    background: #003366;
-    border-color: #007FFF;
+  .box-highlighted {
+    background: #1BB3DE;
+    border: 1px dashed white;
   }
   .box-large {
     height: 8rem;

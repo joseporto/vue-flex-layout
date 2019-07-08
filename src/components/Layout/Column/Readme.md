@@ -34,6 +34,68 @@ Responsive modifiers enable specifying different column sizes, offsets, alignmen
 </Container>
 ```
 
+### Fluid
+
+Percent based widths allow fluid resizing of columns and rows.
+
+```vue
+<Container nogutter>
+  <Row nogutter>
+    <Column :xs="12">
+      <div class="box-row"></div>
+    </Column>
+  </Row>
+  <Row nogutter>
+    <Column :xs="1">
+      <div class="box-row"></div>
+    </Column>
+    <Column :xs="11">
+      <div class="box-row"></div>
+    </Column>
+  </Row>
+  <Row nogutter>
+    <Column :xs="2">
+      <div class="box-row"></div>
+    </Column>
+    <Column :xs="10">
+      <div class="box-row"></div>
+    </Column>
+  </Row>
+  <Row nogutter>
+    <Column :xs="3">
+      <div class="box-row"></div>
+    </Column>
+    <Column :xs="9">
+      <div class="box-row"></div>
+    </Column>
+  </Row>
+  <Row nogutter>
+    <Column :xs="4">
+      <div class="box-row"></div>
+    </Column>
+    <Column :xs="8">
+      <div class="box-row"></div>
+    </Column>
+  </Row>
+  <Row nogutter>
+    <Column :xs="5">
+      <div class="box-row"></div>
+    </Column>
+    <Column :xs="7">
+      <div class="box-row"></div>
+    </Column>
+  </Row>
+  <Row nogutter>
+    <Column :xs="6">
+      <div class="box-row"></div>
+    </Column>
+    <Column :xs="6">
+      <div class="box-row"></div>
+    </Column>
+  </Row>
+</Container>
+```
+
 ### Shift
 
 Shift a column by breakpoint with `xsshift`, `smshift`, `mdshift`, `lgshift` and `xlshift`.
@@ -122,4 +184,124 @@ Shift a column by breakpoint with `xsshift`, `smshift`, `mdshift`, `lgshift` and
     </Column>
   </Row>
 </Container>
+```
+
+### Nested Grids
+
+Nest grids inside grids inside grids.
+
+```vue
+<Row>
+  <Column :xs="7">
+    <div class="box box-container">
+      <Row>
+        <Column :xs="9">
+          <div class="box-first box-container">
+            <Row>
+              <Column :xs="4">
+                <div class="box-first"></div>
+              </Column>
+              <Column :xs="8">
+                <div class="box-first"></div>
+              </Column>
+            </Row>
+          </div>
+        </Column>
+        <Column :xs="3">
+          <div class="box-first box-container">
+            <Row>
+              <Column :xs="true">
+                <div class="box-first"></div>
+              </Column>
+            </Row>
+          </div>
+        </Column>
+      </Row>
+    </div>
+  </Column>
+  <Column :xs="5">
+    <div class="box box-container">
+      <Row>
+        <Column :xs="12">
+          <div class="box-first box-container">
+            <Row>
+              <Column :xs="6">
+                <div class="box-first"></div>
+              </Column>
+              <Column :xs="6">
+                <div class="box-first"></div>
+              </Column>
+            </Row>
+          </div>
+        </Column>
+      </Row>
+    </div>
+  </Column>
+</Row>
+```
+
+### Reordering
+
+Add classes to reorder columns.
+
+`first`
+
+```vue
+<Row>
+  <Column :xs="12">
+    <div class="box box-container">
+      <Row>
+        <Column :xs="2">
+          <div class="box-first">1</div>
+        </Column>
+        <Column :xs="2">
+          <div class="box-first">2</div>
+        </Column>
+        <Column :xs="2">
+          <div class="box-first">3</div>
+        </Column>
+        <Column :xs="2">
+          <div class="box-first">4</div>
+        </Column>
+        <Column :xs="2">
+          <div class="box-first">5</div>
+        </Column>
+        <Column :xs="2" first>
+          <div class="box-highlighted">6</div>
+        </Column>
+      </Row>
+    </div>
+  </Column>
+</Row>
+```
+
+`last`
+
+```vue
+<Row>
+  <Column :xs="12">
+    <div class="box box-container">
+      <Row>
+        <Column :xs="2" last>
+          <div class="box-highlighted">1</div>
+        </Column>
+        <Column :xs="2">
+          <div class="box-first">2</div>
+        </Column>
+        <Column :xs="2">
+          <div class="box-first">3</div>
+        </Column>
+        <Column :xs="2">
+          <div class="box-first">4</div>
+        </Column>
+        <Column :xs="2">
+          <div class="box-first">5</div>
+        </Column>
+        <Column :xs="2">
+          <div class="box-first">6</div>
+        </Column>
+      </Row>
+    </div>
+  </Column>
+</Row>
 ```
