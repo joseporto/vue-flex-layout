@@ -4,7 +4,7 @@ module.exports = {
 	// set your styleguidist configuration here
 	title: 'Vue Flex Layout',
 	components: 'src/components/**/[A-Z]*.js',
-  defaultExample: true,
+  defaultExample: false,
   exampleMode: 'expand',
   usageMode: 'expand',
   sections: [

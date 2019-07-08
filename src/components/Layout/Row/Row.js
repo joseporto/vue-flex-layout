@@ -39,6 +39,27 @@ export default {
       }
     },
     /**
+     * Shortcut for `align="start"`
+     */
+    top: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Shortcut for `align="center"`
+     */
+    middle: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Shortcut for `align="end"`
+     */
+    bottom: {
+      type: Boolean,
+      default: false
+    },
+    /**
      * Horizontal column alignment
      */
     justify: {
@@ -55,6 +76,48 @@ export default {
           'inherit'
         ].indexOf(value) !== -1
       }
+    },
+    /**
+     * Shortcut for `justify="start"`
+     */
+    left: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Shortcut for `justify="center"`
+     */
+    center: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Shortcut for `justify="end"`
+     */
+    right: {
+      type: Boolean,
+      default: false
+    },
+   /**
+     * Shortcut for `justify="between"`
+     */
+    between: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Shortcut for `justify="around"`
+     */
+    around: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Shortcut for `justify="evenly"`
+     */
+    evenly: {
+      type: Boolean,
+      default: false
     },
     grow: Boolean,
     /**
@@ -86,16 +149,16 @@ export default {
         'layout__row--reset': this.resetStyle,
         'layout__row--reverse': this.reverse,
         'layout__row--align-stretch': this.align && this.align === 'strech',
-        'layout__row--align-start': this.align && this.align === 'start',
-        'layout__row--align-end': this.align && this.align === 'end',
-        'layout__row--align-center': this.align && this.align === 'center',
+        'layout__row--align-start': (this.align && this.align === 'start') || this.top,
+        'layout__row--align-end': (this.align && this.align === 'end') || this.bottom,
+        'layout__row--align-center': (this.align && this.align === 'center') || this.middle,
         'layout__row--align-baseline': this.align && this.align === 'baseline',
-        'layout__row--justify-start': this.justify && this.justify === 'start',
-        'layout__row--justify-end': this.justify && this.justify === 'end',
-        'layout__row--justify-center': this.justify && this.justify === 'center',
-        'layout__row--justify-between': this.justify && this.justify === 'between',
-        'layout__row--justify-around': this.justify && this.justify === 'around',
-        'layout__row--justify-evenly': this.justify && this.justify === 'evenly',
+        'layout__row--justify-start': (this.justify && this.justify === 'start') || this.left,
+        'layout__row--justify-end': (this.justify && this.justify === 'end') || this.right,
+        'layout__row--justify-center': (this.justify && this.justify === 'center') || this.center,
+        'layout__row--justify-between': (this.justify && this.justify === 'between') || this.between,
+        'layout__row--justify-around': (this.justify && this.justify === 'around') || this.around,
+        'layout__row--justify-evenly': (this.justify && this.justify === 'evenly') || this.evenly,
         'layout__row--justify-initial': this.justify && this.justify === 'initial',
         'layout__row--justify-inherit': this.justify && this.justify === 'inherit',
         'layout__row--grow': this.grow,
