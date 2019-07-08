@@ -1,0 +1,19 @@
+module.exports = {
+	// set your styleguidist configuration here
+	title: 'Vue Flex Layout',
+	components: 'src/components/**/[A-Z]*.js',
+  defaultExample: true,
+  exampleMode: 'expand',
+  usageMode: 'expand',
+  sections: [
+    {
+      name: 'Layout',
+      components: './src/components/Layout/**/*.js',
+      // content: './src/components/Layout/Readme.md',
+    },
+    {
+      name: 'Helpers',
+      content: './src/components/Helpers/Readme.md',
+    }
+  ]
+}

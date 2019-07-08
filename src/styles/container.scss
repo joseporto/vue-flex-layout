@@ -1,0 +1,22 @@
+@import 'variables.scss';
+
+.layout__container {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  max-width: #{$layout-max-width}px;
+  margin: 0 auto;
+  padding-left: #{$layout-gutter}px;
+  padding-right: #{$layout-gutter}px;
+  &--fluid {
+    max-width: 100%;
+  }
+  &--nogutter {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &--debug {
+    background: transparentize($layout-color-debug-container, .8);
+    border: dashed 1px transparentize($layout-color-debug-container, .6);
+  }
+}

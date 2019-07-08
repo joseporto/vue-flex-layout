@@ -1,0 +1,50 @@
+$layout-max-width: 1420 !default;
+$layout-columns: 12 !default;
+$layout-gutter: 16 !default;
+$layout-color-debug-container: rgb(255, 232, 122) !default;
+$layout-color-debug-row: rgb(163, 221, 122) !default;
+$layout-color-debug-column: rgb(242, 103, 48) !default;
+$layout-color-debug-extra: rgb(57, 169, 219) !default;
+$layout-color-guide: #ED0579 !default;
+$layout-color-guide-container: #01ABA3 !default;
+$layout-color-guide-main: transparentize(#F06925, .2) !default;
+$layout-color-guide-gutter: transparentize(#0071BD, .9) !default;
+$layout-guides-zindex: 2147483647 !default;
+
+$var-media-breakpoint-names: sm, md, lg, xl;
+$var-breakpoints: (
+  "xs": 320,
+  "sm": 576,
+  "md": 768,
+  "lg": 992,
+  "xl": 1200
+) !default;
+
+$var-base-columns: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+
+@function remove-nth($list, $index) {
+  $result: null;
+
+  @if type-of($index) != number {
+    @warn "$index: #{quote($index)} is not a number for `remove-nth`.";
+  } @else if $index == 0 {
+    @warn "List index 0 must be a non-zero integer for `remove-nth`.";
+  } @else if abs($index) > length($list) {
+    @warn "List index is #{$index} but list is only #{length($list)} item long for `remove-nth`.";
+  } @else {
+    $result: ();
+    $index: if($index < 0, length($list) + $index + 1, $index);
+
+    @for $i from 1 through length($list) {
+      @if $i != $index {
+        $result: append($result, nth($list, $i));
+      }
+    }
+  }
+
+  @return $result;
+}
+
+$var-columns: 0,1,2,3,4,5,6,7,8,9,10,11,12;
+$var-columns-top: remove-nth($var-columns, 1);
+$var-columns-bottom: remove-nth($var-columns-top, length($var-columns-top));

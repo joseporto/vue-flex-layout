@@ -1,0 +1,33 @@
+include:
+  template: Dependency-Scanning.gitlab-ci.yml
+
+stages:
+  - test
+  - docs
+
+unit:
+  image: node:8
+  stage: test
+  script:
+    - npm install
+    - npm run test
+  artifacts:
+    paths:
+    - coverage
+    - report
+  only:
+  - develop
+
+pages:
+  image: node:8
+  stage: docs
+  script:
+    - npm install
+    - npm run styleguide:build
+    - rm -rf ./public
+    - mv styleguide public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master

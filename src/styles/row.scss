@@ -1,0 +1,68 @@
+@import 'variables.scss';
+
+.layout__row {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 #{$layout-gutter}px;
+  &--reset {
+    padding: 0;
+    list-style: none;
+  }
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+  &--align-stretch {
+    align-items: stretch;
+  }
+  &--align-start {
+    align-items: flex-start;
+  }
+  &--align-end {
+    align-items: flex-end;
+  }
+  &--align-center {
+    align-items: center;
+  }
+  &--align-baseline {
+    align-items: baseline;
+  }
+  &--justify-start {
+    justify-content: flex-start;
+  }
+  &--justify-end {
+    justify-content: flex-end;
+  }
+  &--justify-center {
+    justify-content: center;
+  }
+  &--justify-between {
+    justify-content: space-between;
+  }
+  &--justify-around {
+    justify-content: space-around;
+  }
+  &--justify-evenly {
+    justify-content: space-evenly;
+  }
+  &--justify-initial {
+    justify-content: initial;
+  }
+  &--justify-inherit {
+    justify-content: inherit;
+  }
+  &--grow {
+    flex-grow: 1;
+  }
+  &--nowrap {
+    flex-wrap: nowrap;
+  }
+  &--nogutter {
+    margin: 0
+  }
+  &--debug {
+    background: transparentize($layout-color-debug-row, .8);
+    border: dashed 1px transparentize($layout-color-debug-row, .6);
+  }
+}
