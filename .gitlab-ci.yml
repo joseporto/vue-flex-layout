@@ -3,6 +3,7 @@ include:
 
 stages:
   - test
+  - release
   - docs
 
 unit:
@@ -17,6 +18,30 @@ unit:
     - report
   only:
   - develop
+
+tag:
+  before_script:
+    - npm install --frozen-lockfile
+  image: node:8
+  stage: release
+  script:
+    - npx semantic-delivery-gitlab --token ${GITLAB_TOKEN}
+  artifacts:
+    paths:
+    - dist
+  only:
+  - master
+
+publish:
+  before_script:
+    - npm install --frozen-lockfile
+  image: node:8
+  stage: release
+  script:
+    - npm run build-lib
+    - npx npm-publish-git-tag --access public
+  only:
+  - tags
 
 pages:
   image: node:8
