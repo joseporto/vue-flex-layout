@@ -1,5 +1,5 @@
 ## Guides
 
 ```vue
-<Guides visible />
+<Guides />
 ```

@@ -57,6 +57,28 @@ plugins: [
 ],
 ```
 
+## Configure
+
+> note: configuration is still experimental.
+
+Override the following variables prior to importing the `main.scss` file:
+
+Variable Name | Description | Default
+--- | --- | --- | ---
+$layout-max-width | maximum width of a non fluid container | 1420
+$layout-columns | maximum number of columns | 12
+$layout-gutter | gutter size in px | 16
+$layout-color-debug-container | base color for when `container` is in `debug` mode | rgb(57, 169, 219)
+$layout-color-debug-row | base color for when `row` is in `debug` mode | rgb(163, 221, 122)
+$layout-color-debug-column | base color for when `column` is in `debug` mode | rgb(242, 103, 48)
+$layout-color-guide-right-limit | color for the rightmost limit for column guide | #ED0579
+$layout-color-guide-left-limit | color for the leftmost limit for column guide | #01ABA3
+$layout-color-guide-column | color for the line representing each column limit | transparentize(#F06925, .2)
+$layout-color-guide-gutter | color for the line representing each column gutter | transparentize(#0071BD, .9)
+$layout-guides-zindex: | guides base z-index | 2147483647
+
+> note: values are represented exaclty as they are in the `_variables.scss` file. **No units are used!**
+
 ## Gutter
 
 Default `gutter` is `16`.
@@ -156,6 +178,8 @@ xlshift | Number | shift column width during `xl` breakpoint | -
 ### Guides Component
 
 Guides will draw vertical guides, based on your columns and gutter configuration options.
+
+> note: By default, guides will not render when the environemnt variable `NODE_ENV` is `"production"`.
 
 #### Using Guides
 
