@@ -15,6 +15,7 @@ module.exports = {
     },
     {
       name: 'Helpers',
+      components: './src/components/Helpers/**/*.js',
       content: './src/components/Helpers/Readme.md',
     }
   ],

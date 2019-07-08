@@ -1,13 +1,12 @@
 $layout-max-width: 1420 !default;
 $layout-columns: 12 !default;
 $layout-gutter: 16 !default;
-$layout-color-debug-container: rgb(255, 232, 122) !default;
+$layout-color-debug-container: rgb(57, 169, 219)  !default;
 $layout-color-debug-row: rgb(163, 221, 122) !default;
 $layout-color-debug-column: rgb(242, 103, 48) !default;
-$layout-color-debug-extra: rgb(57, 169, 219) !default;
-$layout-color-guide: #ED0579 !default;
-$layout-color-guide-container: #01ABA3 !default;
-$layout-color-guide-main: transparentize(#F06925, .2) !default;
+$layout-color-guide-right-limit: #ED0579 !default;
+$layout-color-guide-left-limit: #01ABA3 !default;
+$layout-color-guide-column: transparentize(#F06925, .2) !default;
 $layout-color-guide-gutter: transparentize(#0071BD, .9) !default;
 $layout-guides-zindex: 2147483647 !default;
 
@@ -20,7 +19,15 @@ $var-breakpoints: (
   "xl": 1200
 ) !default;
 
-$var-base-columns: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+@function generate-list($value) {
+	$result: 0;
+	@for $i from 1 through $value {
+		$result: append($result, $i);
+	}
+	@return $result
+}
+
+$var-columns: generate-list($layout-columns) !default;
 
 @function remove-nth($list, $index) {
   $result: null;
@@ -45,6 +52,5 @@ $var-base-columns: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
   @return $result;
 }
 
-$var-columns: 0,1,2,3,4,5,6,7,8,9,10,11,12;
 $var-columns-top: remove-nth($var-columns, 1);
 $var-columns-bottom: remove-nth($var-columns-top, length($var-columns-top));
