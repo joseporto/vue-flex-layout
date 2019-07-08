@@ -6,7 +6,7 @@ const generateBreakpoints = (name, limit, condition) => {
   return result
 }
 
-import '@/styles/column.scss';
+// import './column.scss';
 
 export default {
   name: 'Column',

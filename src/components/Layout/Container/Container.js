@@ -1,5 +1,3 @@
-import '@/styles/container.scss';
-
 export default {
   name: 'Container',
   inheritAttrs: false,

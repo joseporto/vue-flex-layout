@@ -1,5 +1,3 @@
-import '@/styles/row.scss';
-
 export default {
   name: 'Row',
   props: {

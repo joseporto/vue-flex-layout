@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
 	// set your styleguidist configuration here
 	title: 'Vue Flex Layout',
@@ -15,5 +17,9 @@ module.exports = {
       name: 'Helpers',
       content: './src/components/Helpers/Readme.md',
     }
+  ],
+  require: [
+    'babel-polyfill',
+    path.join(__dirname, 'src/styles/main.scss')
   ]
 }

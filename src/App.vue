@@ -11,6 +11,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import './styles/main';
+
 html, body {
   background: #ddd;
   color: #111;

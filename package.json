@@ -12,12 +12,12 @@
     "build": "vue-cli-service build",
     "test": "echo \"Tests not yet specified\" && exit 0",
     "lint": "vue-cli-service lint",
-    "build-lib": "vue-cli-service build --target lib ./src/components/index.js",
+    "build-lib": "vue-cli-service build --target lib ./src/components/index.js && cp ./src/styles/*.scss dist/@jporto",
     "commit": "npx git-cz",
     "lint:fix": "eslint --ext .js,.vue --fix 'src/components/**'",
     "lint:scripts": "eslint --ext .js,.vue src/components",
     "styleguide": "vue-cli-service styleguidist",
-    "styleguide:build": "vue-cli-service styleguidist:build && node replace.js && rimraf ./styleguide/build"
+    "styleguide:build": "vue-cli-service styleguidist:build && node-sass ./src/styles/main.scss -o ./styleguide/build/ && replace '</head>' '<link rel=\"stylesheet\" type=\"text/css\" href=\"build/main.css\"></head>' ./styleguide/index.html && node replace.js && rimraf ./styleguide/build"
   },
   "main": "dist/@jporto/vue-flex-layout.common.js",
   "unpkg": "dist/@jporto/vue-flex-layout.umd.min.js",
@@ -37,6 +37,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
+    "replace": "^1.1.0",
     "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
     "semver": "^6.2.0",
