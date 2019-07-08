@@ -1,5 +1,5 @@
 {
-  "name": "@joseporto/vue-flex-layout",
+  "name": "@jporto/vue-flex-layout",
   "version": "0.0.0",
   "private": false,
   "description": "A VueJS flexbox partitionable layout",
@@ -19,8 +19,8 @@
     "styleguide": "vue-cli-service styleguidist",
     "styleguide:build": "vue-cli-service styleguidist:build && node replace.js && rimraf ./styleguide/build"
   },
-  "main": "dist/@joseporto/vue-flex-layout.common.js",
-  "unpkg": "dist/@joseporto/vue-flex-layout.umd.min.js",
+  "main": "dist/@jporto/vue-flex-layout.common.js",
+  "unpkg": "dist/@jporto/vue-flex-layout.umd.min.js",
   "dependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.10"
@@ -62,7 +62,7 @@
     "> 1%",
     "last 2 versions"
   ],
-  "_id": "@joseporto/vue-flex-layout@1.0.0",
+  "_id": "@jporto/vue-flex-layout@1.0.0",
   "bugs": {
     "url": "https://gitlab.com/porto/vue-flex-layout/issues"
   },

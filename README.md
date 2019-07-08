@@ -1,7 +1,7 @@
-# @joseporto/vue-flex-layout
+# @jporto/vue-flex-layout
 
 [![build status](https://img.shields.io/gitlab/pipeline/porto/vue-flex-layout/master.svg)](https://gitlab.com/porto/vue-flex-layout.git)
-[![npm-publish](https://img.shields.io/npm/dm/@joseporto/vue-flex-layout.svg)](https://www.npmjs.com/package/@joseporto/vue-flex-layout)
+[![npm-publish](https://img.shields.io/npm/dm/@jporto/vue-flex-layout.svg)](https://www.npmjs.com/package/@jporto/vue-flex-layout)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![language count](https://img.shields.io/github/languages/count/vue-flex-layout.svg)](https://gitlab.com/porto/vue-flex-layout/-/graphs/master/charts)
 
@@ -12,13 +12,13 @@ Checkout the [Demo](https://porto.gitlab.io/vue-flex-layout/).
 ## Instalation
 
 ```bash
-yarn add @joseporto/vue-flex-layout
+yarn add @jporto/vue-flex-layout
 ```
 
 or
 
 ```bash
-npm install @joseporto/vue-flex-layout
+npm install @jporto/vue-flex-layout
 ```
 
 ## Setup
@@ -28,7 +28,7 @@ npm install @joseporto/vue-flex-layout
 - Add the following to you application main.js file:
 
 ```js
-import VueFlexLayout from '@joseporto/vue-flex-layout'
+import VueFlexLayout from '@jporto/vue-flex-layout'
 
 Vue.use(VueFlexLayout)
 ```
@@ -39,7 +39,7 @@ Vue.use(VueFlexLayout)
   
 ```js
 import Vue from 'vue'
-import VueFlexLayout from '@joseporto/vue-flex-layout';
+import VueFlexLayout from '@jporto/vue-flex-layout';
 Vue.use(VueFlexLayout);
 ```
 
