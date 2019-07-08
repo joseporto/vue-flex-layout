@@ -16,7 +16,7 @@ inline.html( {
   relativeTo: "styleguide/"
 },
 ( err, result ) => {
-  fs.writeFile('styleguide/index.html', result, 'utf8', function (err) {
+  fs.writeFile('styleguide/index.html', result, 'utf8', (err) => {
     if (err) {
       // eslint-disable-next-line no-console
       return console.log(err);

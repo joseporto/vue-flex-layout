@@ -1,5 +1,3 @@
-import '@/styles/guides.scss';
-
 export default {
   name: 'Guides',
   data() {
