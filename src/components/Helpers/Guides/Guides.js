@@ -2,7 +2,7 @@ export default {
   name: 'Guides',
   data() {
     return {
-      visibility: process.env.NODE_ENV === 'production' ? false : this.visible
+      visibility: this.visible
     }
   },
   props: {
@@ -24,9 +24,6 @@ export default {
   },
   mounted () {
     document.addEventListener('keydown', e => {
-      if (process.env.NODE_ENV === 'production') {
-        return
-      }
       if (e.key === this.assignedkey) {
         this.visibility = !this.visibility
       }
