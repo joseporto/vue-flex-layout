@@ -9,6 +9,10 @@ A VueJS flexbox partitionable layout
 
 Checkout the [Demo](https://porto.gitlab.io/vue-flex-layout/) which contains the component documentation.
 
+If you enjoy this component, feel free to drop me feedback, either via the repository, or via joseporto@icloud.com.
+
+Also, please [verify my project](https://bio.torre.co/joseporto/projects?id=EM3rLwNa&view=verify) at torre.co.
+
 ## Instalation
 
 ```bash
