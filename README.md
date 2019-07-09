@@ -1,6 +1,6 @@
 # @jporto/vue-flex-layout
 
-![logo](/src/assets/logo64.png)
+![logo](https://gitlab.com/porto/vue-flex-layout/raw/master/src/assets/logo64.png)
 
 [![build status](https://img.shields.io/gitlab/pipeline/porto/vue-flex-layout/master.svg)](https://gitlab.com/porto/vue-flex-layout.git)
 [![npm-publish](https://img.shields.io/npm/dm/@jporto/vue-flex-layout.svg)](https://www.npmjs.com/package/@jporto/vue-flex-layout)
@@ -11,9 +11,9 @@ A VueJS flexbox partitionable layout
 
 Checkout the [Demo](https://porto.gitlab.io/vue-flex-layout/) which contains the component documentation.
 
-If you enjoy this component, feel free to drop me feedback, either via the repository, or via joseporto@icloud.com.
+> If you enjoy this component, feel free to drop me feedback, either via the repository, or via joseporto@icloud.com.
 
-Also, please [verify my project](https://bio.torre.co/joseporto/projects?id=EM3rLwNa&view=verify) at torre.co.
+> Also, please [verify my project](https://bio.torre.co/joseporto/projects?id=EM3rLwNa&view=verify) at torre.co.
 
 ## Instalation
 
