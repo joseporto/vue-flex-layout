@@ -75,6 +75,6 @@ $layout-color-guide-right-limit | color for the rightmost limit for column guide
 $layout-color-guide-left-limit | color for the leftmost limit for column guide | #01ABA3
 $layout-color-guide-column | color for the line representing each column limit | transparentize(#F06925, .2)
 $layout-color-guide-gutter | color for the line representing each column gutter | transparentize(#0071BD, .9)
-$layout-guides-zindex: | guides base z-index | 2147483647
+$layout-guides-zindex | guides base z-index | 2147483647
 
 > note: values are represented exaclty as they are in the `_variables.scss` file. **No units are used!**
