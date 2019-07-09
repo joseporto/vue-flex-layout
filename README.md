@@ -1,5 +1,7 @@
 # @jporto/vue-flex-layout
 
+![logo](/src/assets/logo64.png)
+
 [![build status](https://img.shields.io/gitlab/pipeline/porto/vue-flex-layout/master.svg)](https://gitlab.com/porto/vue-flex-layout.git)
 [![npm-publish](https://img.shields.io/npm/dm/@jporto/vue-flex-layout.svg)](https://www.npmjs.com/package/@jporto/vue-flex-layout)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
