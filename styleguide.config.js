@@ -1,7 +1,6 @@
 const path = require('path')
 
 module.exports = {
-	// set your styleguidist configuration here
 	title: 'Vue Flex Layout',
 	components: 'src/components/**/[A-Z]*.js',
   defaultExample: false,
@@ -10,13 +9,11 @@ module.exports = {
   sections: [
     {
       name: 'Layout',
-      components: './src/components/Layout/**/*.js',
-      // content: './src/components/Layout/Readme.md',
+      components: './src/components/Layout/**/*.js'
     },
     {
       name: 'Helpers',
-      components: './src/components/Helpers/**/*.js',
-      content: './src/components/Helpers/Readme.md',
+      components: './src/components/Helpers/**/*.js'
     }
   ],
   require: [

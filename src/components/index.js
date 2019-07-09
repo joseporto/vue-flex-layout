@@ -1,7 +1,7 @@
-import Container from './Layout/Container/Container'
-import Row from './Layout/Row/Row'
-import Column from './Layout/Column/Column'
-import Guides from './Helpers/Guides/Guides'
+import Container from './Layout/Container'
+import Row from './Layout/Row'
+import Column from './Layout/Column'
+import Guides from './Helpers/Guides'
 
 const VueFlexLayout = {
   install (Vue) {
