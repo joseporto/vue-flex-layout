@@ -6,8 +6,6 @@ const generateBreakpoints = (name, limit, condition) => {
   return result
 }
 
-// import './column.scss';
-
 export default {
   name: "Column",
   inheritAttrs: false,
@@ -49,14 +47,14 @@ export default {
       validator(value) {
         return (
           [
-            "start",
-            "end",
-            "center",
-            "between",
-            "around",
-            "evenly",
-            "initial",
-            "inherit"
+            'start',
+            'end',
+            'center',
+            'between',
+            'around',
+            'evenly',
+            'initial',
+            'inheri'
           ].indexOf(value) !== -1
         );
       }
@@ -176,12 +174,12 @@ export default {
     classes() {
       const classes = {
         layout__column: true,
-        "layout__row--reverse": this.reverse,
-        "layout__column--align-stretch": this.align && this.align === "strech",
-        "layout__column--align-start": this.align && this.align === "start",
-        "layout__column--align-end": this.align && this.align === "end",
-        "layout__column--align-center": this.align && this.align === "center",
-        "layout__column--align-baseline": this.align && this.align === "baseline",
+        'layout__row--reverse': this.reverse,
+        'layout__column--align-stretch': this.align && this.align === 'strech',
+        'layout__column--align-start': this.align && this.align === 'start',
+        'layout__column--align-end': this.align && this.align === 'end',
+        'layout__column--align-center': this.align && this.align === 'center',
+        'layout__column--align-baseline': this.align && this.align === 'baseline',
         'layout__column--justify-start': (this.justify && this.justify === 'start') || this.left,
         'layout__column--justify-end': (this.justify && this.justify === 'end') || this.right,
         'layout__column--justify-center': (this.justify && this.justify === 'center') || this.center,
@@ -190,33 +188,26 @@ export default {
         'layout__column--justify-evenly': (this.justify && this.justify === 'evenly') || this.evenly,
         'layout__column--justify-initial': this.justify && this.justify === 'initial',
         'layout__column--justify-inherit': this.justify && this.justify === 'inherit',
-        "layout__column--xs": this.xs, // && !Number.isInteger(this.xs),
-        ...generateBreakpoints("xs", 12, this.xs),
-        ...generateBreakpoints("sm", 12, this.sm),
-        ...generateBreakpoints("md", 12, this.md),
-        ...generateBreakpoints("lg", 12, this.lg),
-        ...generateBreakpoints("xl", 12, this.xl),
-        ...generateBreakpoints("xs-shift", 12, this.xsshift),
-        ...generateBreakpoints("sm-shift", 12, this.smshift),
-        ...generateBreakpoints("md-shift", 12, this.mdshift),
-        ...generateBreakpoints("lg-shift", 12, this.lgshift),
-        ...generateBreakpoints("xl-shift", 12, this.xlshift),
-        "layout__column--first": this.first,
-        "layout__column--last": this.last,
-        "layout__column--nogutter": this.nogutter,
-        "layout__column--debug": this.debug
+        'layout__column--xs': this.xs,
+        ...generateBreakpoints('xs', 12, this.xs),
+        ...generateBreakpoints('sm', 12, this.sm),
+        ...generateBreakpoints('md', 12, this.md),
+        ...generateBreakpoints('lg', 12, this.lg),
+        ...generateBreakpoints('xl', 12, this.xl),
+        ...generateBreakpoints('xs-shift', 12, this.xsshift),
+        ...generateBreakpoints('sm-shift', 12, this.smshift),
+        ...generateBreakpoints('md-shift', 12, this.mdshift),
+        ...generateBreakpoints('lg-shift', 12, this.lgshift),
+        ...generateBreakpoints('xl-shift', 12, this.xlshift),
+        'layout__column--first': this.first,
+        'layout__column--last': this.last,
+        'layout__column--nogutter': this.nogutter,
+        'layout__column--debug': this.debug
       };
       return classes;
     }
   },
   render(createElement) {
-    /* if (this.span) {
-      style.flex = `0 0 ${this.column}%`
-    } else {
-      style.left = 'auto',
-      style.right = 'auto'
-    } */
-
     return createElement(
       this.tag,
       {
