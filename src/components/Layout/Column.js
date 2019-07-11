@@ -53,7 +53,7 @@ export default {
           'around',
           'evenly',
           'initial',
-          'inheri'
+          'inherit'
         ].indexOf(value) !== -1
       }
     },
