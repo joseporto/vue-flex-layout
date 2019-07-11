@@ -45,18 +45,16 @@ export default {
     justify: {
       type: String,
       validator(value) {
-        return (
-          [
-            'start',
-            'end',
-            'center',
-            'between',
-            'around',
-            'evenly',
-            'initial',
-            'inheri'
-          ].indexOf(value) !== -1
-        );
+        return [
+          'start',
+          'end',
+          'center',
+          'between',
+          'around',
+          'evenly',
+          'initial',
+          'inherit'
+        ].indexOf(value) !== -1
       }
     },
     /**
