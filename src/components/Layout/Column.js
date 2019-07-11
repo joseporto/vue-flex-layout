@@ -7,7 +7,7 @@ const generateBreakpoints = (name, limit, condition) => {
 }
 
 export default {
-  name: 'Column',
+  name: "Column",
   inheritAttrs: false,
   props: {
     /**
@@ -15,7 +15,7 @@ export default {
      */
     tag: {
       type: String,
-      default: 'div'
+      default: "div"
     },
     /**
      * Reverse direction of the column

@@ -1,6 +1,6 @@
 .layout__column {
   box-sizing: border-box;
-  flex-direction: row;
+  flex-direction: column;
   flex: 1;
   padding-left: #{$layout-gutter/2}px;
   padding-right: #{$layout-gutter/2}px;
