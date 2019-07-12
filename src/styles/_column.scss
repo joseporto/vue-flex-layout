@@ -135,8 +135,8 @@
     box-sizing: border-box;
     min-height: 1rem;
     margin-bottom: 0;
-    background: transparentize(#1BB3DE, .5);
-    border: 1px solid transparentize(#1BB3DE, .3);
+    background: transparentize($layout-color-debug-container, .5);
+    border: 1px solid transparentize($layout-color-debug-container, .3);
     border-radius: 3px;
     overflow: hidden;
     text-align: center;
@@ -146,7 +146,7 @@
     margin-bottom: 1rem;
   }
   .box-highlighted {
-    background: #1BB3DE;
+    background: $layout-color-debug-container;
     border: 1px dashed white;
   }
   .box-large {
